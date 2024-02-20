@@ -14,4 +14,6 @@ Programs required to be installed outside of neovim:
 		3. Start Neovim in a refreshed environment: refreshenv
 		4. Install parsers in Neovim via :TSInstall c, :TSInstall cpp
 - williamboman/mason.nvim
-  - Add "C:\Users\Nick\AppData\Local\nvim-data\mason\bin" to the PATH
+  - Add "%USERPROFILE%\AppData\Local\nvim-data\mason\bin" to the PATH
+- dandavison/delta
+  - choco install delta
