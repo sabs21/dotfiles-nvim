@@ -9,6 +9,8 @@ return {
             lua = { "stylua" },
             python = { "isort", "black" },
             javascript = { { "prettierd", "prettier" } },
+            java = { "google-java-format" },
+            rust = { "rustfmt" }
         },
         -- Set up format-on-save
         format_on_save = { timeout_ms = 500, lsp_fallback = true },

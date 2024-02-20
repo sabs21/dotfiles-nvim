@@ -1,3 +1,7 @@
+-- automatically switch directory when loading a file through netrw
+-- vim.g["netrw_keepdir"] = 0
+-- manually switch directory in netrw using 'cd'
+
 vim.g.mapleader = " "
 
 vim.opt.nu = true
