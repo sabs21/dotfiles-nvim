@@ -3,6 +3,19 @@ return {
     event = { "BufWritePre" },
     cmd = { "ConformInfo" },
     -- Everything in opts will be passed to setup()
+    keys = {
+        {
+            "<leader>fm",
+            function()
+                require("conform").format(
+                    { async = true, lsp_fallback = true },
+                    function()
+                        vim.cmd("e!")
+                    end
+                )
+            end,
+        }
+    },
     opts = {
         -- Define your formatters
         formatters_by_ft = {
@@ -13,11 +26,18 @@ return {
             rust = { "rustfmt" }
         },
         -- Set up format-on-save
-        format_on_save = { timeout_ms = 500, lsp_fallback = true },
+        --format_after_save = { lsp_fallback = true },
         -- Customize formatters
         formatters = {
-            shfmt = {
-                prepend_args = { "-i", "2" },
+            rustfmt = {
+                command = "rustfmt",
+                args = {
+                    "--edition",
+                    "2024",
+                    "--config",
+                    "max_width=80",
+                    "$FILENAME"
+                }
             },
         },
     },
