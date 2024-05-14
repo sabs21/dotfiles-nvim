@@ -7,12 +7,11 @@ return {
         {
             "<leader>fm",
             function()
-                require("conform").format(
-                    { async = true, lsp_fallback = true },
-                    function()
-                        vim.cmd("e!")
-                    end
-                )
+                require("conform").format({ 
+                    async = false, 
+                    lsp_fallback = true,
+                    timeout_ms = 500
+                })
             end,
         }
     },
@@ -21,7 +20,8 @@ return {
         formatters_by_ft = {
             lua = { "stylua" },
             python = { "isort", "black" },
-            javascript = { { "prettierd", "prettier" } },
+            html = { "prettierd" },
+            javascript = { "prettierd" },
             java = { "google-java-format" },
             rust = { "rustfmt" }
         },
