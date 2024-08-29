@@ -10,10 +10,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins =
+local opts =
 {
-	spec = { import = "lazy.plugins" }
+    spec = { import = "lazy.plugins" },
+    install = { colorscheme = { "melange" } },
+    checker = { enabled = true }
 }
 
 local opts = nil
-require("lazy").setup(plugins, opts)
+require("lazy").setup('lazy.plugins', opts)

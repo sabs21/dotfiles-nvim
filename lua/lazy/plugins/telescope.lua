@@ -1,6 +1,5 @@
 return { {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
     dependencies =
     {
         "nvim-lua/plenary.nvim",
@@ -11,16 +10,12 @@ return { {
     },
     keys =
     {
-        { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find files" },
-        { "<leader>fg", "<cmd>lua require('telescope.builtin').git_files()<cr>",  desc = "Git files" },
-        { "<leader>fl", "<cmd>lua require('telescope.builtin').live_grep()<cr>",  desc = "Live grep" },
+        { "<leader>fl", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", desc = "Find Local" },
+        { "<leader>fa", "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = "Find All" },
     },
-    config = {
-        layout_config = {
-            width = 0.75,
-            preview_cutoff = 120,
-            horizontal = { mirror = false },
-            vertical = { mirror = false },
-        },
-    }
+    opts = {
+		defaults = {
+			winblend = 30
+		}
+	}
 } }

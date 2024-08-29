@@ -43,7 +43,7 @@ return { {
             desc = "Git commit"
         },
         {
-            "<leader>gd",
+            "<leader>gD",
             "<cmd>" ..
             "lua vim.cmd('split');" ..
             "local win = vim.api.nvim_get_current_win();" ..
