@@ -4,6 +4,7 @@ if not vim.uv.fs_stat(lazypath) then
 		"git",
 		"clone",
 		"--filter=blob:none",
+        "--branch=stable",
 		"https://github.com/folke/lazy.nvim.git",
 		lazypath
 	})
@@ -16,6 +17,4 @@ local opts =
     install = { colorscheme = { "melange" } },
     checker = { enabled = true }
 }
-
-local opts = nil
 require("lazy").setup('lazy.plugins', opts)
