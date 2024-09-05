@@ -2,19 +2,19 @@ return {
     "stevearc/conform.nvim",
     event = { "BufWritePre" },
     cmd = { "ConformInfo" },
-    -- Everything in opts will be passed to setup()
     keys = {
         {
             "<leader>fm",
             function()
-                require("conform").format({ 
-                    async = false, 
+                require("conform").format({
+                    async = false,
                     lsp_fallback = true,
                     timeout_ms = 500
                 })
             end,
         }
     },
+    -- Everything in opts will be passed to setup()
     opts = {
         -- Define your formatters
         formatters_by_ft = {
