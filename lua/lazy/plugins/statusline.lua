@@ -1,44 +1,58 @@
-local colors = {
-    black        = '#282828',
-    white        = '#ebdbb2',
-    red          = '#5c1b02',
-    green        = '#1c324d',
-    blue         = '#5c3802',
-    yellow       = '#fe8019',
-    gray         = '#453725',
-    darkgray     = '#383431',
-    lightgray    = '#504945',
-    inactivegray = '#7c6f64',
+local c = {
+    primary          = '#ebdbb2',
+    secondary        = '#4d483c',
+    tertiary         = '#383431',
+    inactive         = '#7c6f64',
+    normal_bright    = '#db8e2a',
+    normal_dark      = '#453725',
+    insert_bright    = '#db8e2a',
+    insert_dark      = '#453725',
+    visual_bright    = '#1fc4de',
+    visual_dark      = '#1a383d',
+    replace_bright   = '#de0707',
+    replace_dark     = '#381919',
+    command_bright   = '#5765ff',
+    command_dark     = '#303247'
 }
 
 local theme = {
     normal = {
-        a = {bg = colors.gray, fg = colors.white, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.darkgray, fg = colors.white}
+        a = {bg = c.primary, gui = 'bold'},
+        b = {bg = c.secondary, fg = c.primary},
+        c = {bg = c.tertiary, fg = c.primary},
+        y = {bg = c.secondary, fg = c.primary},
+        z = {bg = c.secondary, fg = c.primary}
     },
     insert = {
-        a = {bg = colors.blue, fg = colors.white, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.darkgray,  fg = colors.white}
+        a = {bg = c.insert_bright, gui = 'bold'},
+        b = {bg = c.insert_dark, fg = c.insert_bright},
+        c = {bg = c.tertiary, fg = c.primary},
+        y = {bg = c.secondary, fg = c.primary},
+        z = {bg = c.secondary, fg = c.primary}
     },
     visual = {
-        a = {bg = colors.gray, fg = colors.white, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.darkgray, fg = colors.white}
+        a = {bg = c.visual_bright, gui = 'bold'},
+        b = {bg = c.visual_dark, fg = c.visual_bright},
+        c = {bg = c.tertiary, fg = c.primary},
+        y = {bg = c.secondary, fg = c.primary},
+        z = {bg = c.secondary, fg = c.primary}
     },
     replace = {
-        a = {bg = colors.red, fg = colors.white, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.darkgray,  fg = colors.white}
+        a = {bg = c.replace_bright, gui = 'bold'},
+        b = {bg = c.replace_dark, fg = c.replace_bright},
+        c = {bg = c.tertiary, fg = c.primary},
+        y = {bg = c.secondary, fg = c.primary},
+        z = {bg = c.secondary, fg = c.primary}
     },
     command = {
-        a = {bg = colors.green, fg = colors.white, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.darkgray, fg = colors.white}
+        a = {bg = c.command_bright, gui = 'bold'},
+        b = {bg = c.command_dark, fg = c.command_bright},
+        c = {bg = c.tertiary, fg = c.primary},
+        y = {bg = c.secondary, fg = c.primary},
+        z = {bg = c.secondary, fg = c.primary}
     },
     inactive = {
-        a = {fg = colors.inactivegray},
+        a = {fg = c.inactive},
         b = {},
         c = {}
     }
@@ -55,14 +69,34 @@ return {{
         },
         sections = {
             lualine_a = {
-                { 'mode', separator = { right = ' ' }, padding = { left = 4, right = 1 } }
+                {
+                    '%w',
+                    padding = 2
+                }
             },
-            lualine_b = { 'filename', 'branch' },
+            lualine_b = {
+                {
+                    'mode',
+                    padding = 2
+                }
+            },
             lualine_c = {
+                'filename',
+                'branch'
+            },
+            lualine_x = {
               '%=', --[[ add your center components here in place of this comment ]]
             },
-            lualine_x = {},
-            lualine_y = { 'filetype', 'progress' },
+            lualine_y = {
+                {
+                    'filetype',
+                    padding = 2
+                },
+                {
+                    'progress',
+                    padding = 2
+                }
+            },
             lualine_z = {
               { 'location', separator = { left = ' ' }, padding = { left = 1, right = 4 } },
             }
