@@ -81,11 +81,11 @@ return {{
                 }
             },
             lualine_c = {
-                'filename',
+                'diff',
                 'branch'
             },
             lualine_x = {
-              '%=', --[[ add your center components here in place of this comment ]]
+              '%='
             },
             lualine_y = {
                 {
@@ -102,12 +102,22 @@ return {{
             }
         },
         inactive_sections = {
-            lualine_a = { 'filename' },
+            lualine_a = {},
             lualine_b = {},
             lualine_c = {},
             lualine_x = {},
             lualine_y = {},
-            lualine_z = { 'location' }
+            lualine_z = {}
+        },
+        winbar = {
+            lualine_x = {
+                {
+                    'filename',
+                    padding = 2,
+                    path = 1
+                },
+                '%='
+            }
         },
         tabline = {},
         extensions = {}
