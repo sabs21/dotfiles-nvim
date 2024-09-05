@@ -38,9 +38,9 @@ local theme = {
         c = {bg = colors.darkgray, fg = colors.white}
     },
     inactive = {
-        a = {bg = colors.darkgray, fg = colors.gray, gui = 'bold'},
-        b = {bg = colors.darkgray, fg = colors.gray},
-        c = {fg = colors.gray}
+        a = {fg = colors.inactivegray},
+        b = {},
+        c = {}
     }
 }
 
