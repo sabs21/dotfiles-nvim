@@ -10,8 +10,8 @@ return { {
     },
     keys =
     {
-        { "<leader>fl", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", desc = "Find Local" },
-        { "<leader>fa", "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = "Find All" },
+        { "?", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", desc = "Find Local" },
+        { "<leader>?", "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = "Find All" },
     },
     opts = {
 		defaults = {
