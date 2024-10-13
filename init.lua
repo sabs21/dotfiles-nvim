@@ -1,4 +1,5 @@
 require("autocmd")
+require("detectOS")
 require("set")
 require("remap")
 require("lazy.lazy")

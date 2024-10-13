@@ -1,5 +1,7 @@
+require("detectOS")
+
 local os = require("os")
-local work_dir = os.getenv("USERPROFILE") .. "\\projects"
+local work_dir = detectOS() == "win" and os.getenv("USERPROFILE") .. "\\projects" or os.getenv("HOME") .. "/dev"
 --local work_dir = os.getenv("USERPROFILE") .. "\\AppData\\Local\\nvim"
 
 -- set working directory when entering a file

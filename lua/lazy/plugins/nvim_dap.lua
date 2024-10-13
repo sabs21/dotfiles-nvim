@@ -1,3 +1,4 @@
+require("detectOS")
 return {{
     "mfussenegger/nvim-dap",
     dependencies = {
@@ -53,7 +54,12 @@ return {{
             dapui.close()
         end
 
-        local codelldb_path = require("mason-registry").get_package("codelldb"):get_install_path() .. "\\extension\\adapter\\codelldb.exe"
+        local codelldb_path = require("mason-registry").get_package("codelldb"):get_install_path()
+        if detectOS() == "win" then
+            codelldb_path = codelldb_path .. "\\extension\\adapter\\codelldb.exe"
+        else
+            codelldb_path = codelldb_path .. "/extension/adapter/codelldb.exe"
+        end
         dap.adapters.codelldb = {
             type = 'server',
             --host = '127.0.0.1',
