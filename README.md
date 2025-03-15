@@ -3,6 +3,8 @@ A config for Neovim that includes
 - Autocomplete
 - LSP
 
+Once the config is setup, you'll likely get an error about codelldb. To fix this, open Mason (cmd `:Mason`), open the DAP tab, then install codelldb and restart neovim.
+
 Programs required to be installed outside of neovim:
 - BurntSushi/ripgrep (https://github.com/BurntSushi/ripgrep)
 - nvim-treesitter/nvim-treesitter
