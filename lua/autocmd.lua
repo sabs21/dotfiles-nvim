@@ -7,7 +7,7 @@ local work_dir = detectOS() == "win" and os.getenv("USERPROFILE") .. "\\projects
 -- set working directory when entering a file
 local vim_enter_group = vim.api.nvim_create_augroup("vim_enter_group", { clear = true })
 vim.api.nvim_create_autocmd("VimEnter", {
-    pattern = "*",
-    command = "cd " .. work_dir,
-    group = vim_enter_group
+	pattern = "*",
+	command = "cd " .. work_dir,
+	group = vim_enter_group
 })
