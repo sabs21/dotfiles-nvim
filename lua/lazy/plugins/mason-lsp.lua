@@ -8,6 +8,19 @@ vim.lsp.config['lua_ls'] = {
 	}
 }
 
+vim.lsp.config['vtsls'] = {
+	init_options = {
+		plugins = {
+			{
+				name = "@vue/typescript-plugin",
+				location = vim.fn.expand("$MASON/packages/vue-language-server") .. "/node_modules/@vue/language-server",
+				languages = { 'javascript', 'typescript', 'vue' }
+			}
+		}
+	},
+	filetypes = { 'javascript', 'typescript', 'vue' }
+}
+
 return { {
 	"mason-org/mason-lspconfig.nvim",
 	opts = {},

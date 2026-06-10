@@ -24,10 +24,11 @@ vim.keymap.set("n", "Q", "<nop>")
 -- vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 
 --vim.keymap.set('n', '<leader>fm', '<cmd>lua require("conform").format()<cr>')
-vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
--- vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
--- vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
--- vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+--vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
 
 --local function set_lspattach_mappings(opts)
 --local opts = { noremap = true, silent = true }

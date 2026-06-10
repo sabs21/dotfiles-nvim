@@ -52,6 +52,17 @@ return { {
             "vim.fn.termopen('git -P diff | delta -n -s --dark', { cwd = vim.loop.cwd() })" ..
             "<cr>",
             desc = "Git diff"
+        },
+        {
+            "<leader>gM",
+            "<cmd>" ..
+            "lua vim.cmd('split');" ..
+            "local win = vim.api.nvim_get_current_win();" ..
+            "local buf = vim.api.nvim_create_buf(true, true);" ..
+            "vim.api.nvim_win_set_buf(win, buf);" ..
+            "vim.fn.termopen('git -P diff main.. | delta -n -s --dark', { cwd = vim.loop.cwd() })" ..
+            "<cr>",
+            desc = "Git diff against main"
         }
     }
 } }
