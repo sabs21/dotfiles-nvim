@@ -6,8 +6,7 @@ return{{
 	opts = {
 		providers = {
 			"hover.providers.lsp",
-			"hover.providers.diagnostic",
-			"hover.prodiders.fold_preview"
+			"hover.providers.diagnostic"
 		},
 		preview_opts = {
 			border = "single"
