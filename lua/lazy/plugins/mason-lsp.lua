@@ -8,17 +8,23 @@ vim.lsp.config['lua_ls'] = {
 	}
 }
 
+local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
+local vue_plugin = {
+	name = '@vue/typescript-plugin',
+	location = vim.fn.expand("$MASON/packages/vue-language-server") .. "/node_modules/@vue/language-server",
+	languages = { "vue" }
+}
+
 vim.lsp.config['vtsls'] = {
-	init_options = {
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = vim.fn.expand("$MASON/packages/vue-language-server") .. "/node_modules/@vue/language-server",
-				languages = { 'javascript', 'typescript', 'vue' }
+	settings = {
+		vtsls = {
+			tsserver = {
+				globalPlugins = {
+					vue_plugin
+				}
 			}
 		}
-	},
-	filetypes = { 'javascript', 'typescript', 'vue' }
+	}
 }
 
 return { {
