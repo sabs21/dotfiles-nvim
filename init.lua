@@ -1,3 +1,4 @@
+require("environment")
 require("autocmd")
 require("detectOS")
 require("set")

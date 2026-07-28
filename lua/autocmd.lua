@@ -1,13 +1,14 @@
+require("environment")
 require("detectOS")
 
-local os = require("os")
+--local os = require("os")
 --local work_dir = detectOS() == "win" and os.getenv("USERPROFILE") .. "\\projects" or os.getenv("HOME") .. "/dev"
-local work_dir = "E:\\dev"
+--local work_dir = "E:\\dev"
 
 -- set working directory when entering a file
 local vim_enter_group = vim.api.nvim_create_augroup("vim_enter_group", { clear = true })
 vim.api.nvim_create_autocmd("VimEnter", {
 	pattern = "*",
-	command = "cd " .. work_dir,
+	command = "cd " .. WORK_DIR,
 	group = vim_enter_group
 })
