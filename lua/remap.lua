@@ -30,6 +30,30 @@ vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
 vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
 vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
 
+vim.keymap.set('x', 'r',
+	function()
+		-- Save the visual selection to the unnamed register
+		vim.cmd('normal! "zy')
+
+		-- Store selected text in a variable
+		local selection = vim.fn.getreg('z')
+
+		-- Escape the selection
+		local pattern = vim.fn.escape(selection, [[\]])
+		pattern = pattern:gsub('\n', [[\n]])
+
+		-- Put the pattern in the search register
+		vim.fn.setreg('/', [[\V]] .. pattern)
+
+		-- Prompt for the replacement text
+		local replacement = vim.fn.input('Replace with: ')
+
+		-- Replace all occurrences
+		vim.cmd(string.format('%%s//%s/', vim.fn.escape(replacement, '/\\')))
+	end,
+	{ desc = 'Replace all occurrences of visual selection' }
+)
+
 --local function set_lspattach_mappings(opts)
 --local opts = { noremap = true, silent = true }
 -- vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
