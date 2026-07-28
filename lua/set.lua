@@ -15,6 +15,9 @@ vim.opt.wrap = false
 -- Allow for a wider range of colors to display in neovim
 vim.opt.termguicolors = true
 
+-- Display line numbers
+vim.wo.number = true
+
 --vim.opt.nu = true
 --vim.opt.relativenumber = true
 --vim.opt.expandtab = true
