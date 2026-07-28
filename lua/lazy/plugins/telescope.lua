@@ -19,7 +19,12 @@ return { {
 	{
 		defaults =
 		{
-			winblend = 30
+			winblend = 30,
+			layout_strategy = 'vertical',
+			layout_config = {
+				height = 0.95,
+				width = 0.9
+			}
 		}
 	}
 } }
